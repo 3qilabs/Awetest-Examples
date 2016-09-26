@@ -1,4 +1,3 @@
-#Bootcamp Example 1 IE, Classic Watir
 require 'watir'
 require 'win32ole'
 @ai = ::WIN32OLE.new('AutoItX3.Control')
@@ -41,7 +40,7 @@ sleep(2)
 # delete the account
 browser.link(:text, "Acct #{timestamp}").click
 sleep(2)
-browser.button(:name, 'Delete2').click
+browser.button(:name, 'Delete2').click_no_wait
 @ai.WinWait("Message from webpage")
 sleep(2)
 @ai.ControlClick("Message from webpage", "", "OK")

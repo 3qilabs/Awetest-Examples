@@ -4,7 +4,7 @@ $watir_script = true
 module Bootcamp3Awetestlib
 
   def run_test(browser)
-    acct_name = "Acct #{@timestamp}" # DRY: avoid literals
+    acct_name = "Acct #{@timestamp}" # DRY: avoid duplicate literals
 
     navigate_to_accounts_in_crm(browser)
     open_new_account(browser, acct_name)
@@ -19,7 +19,7 @@ module Bootcamp3Awetestlib
   end
 
   def edit_account(browser, acct_name)
-
+    mark_test_level()
     set_text_field(browser, :id, 'property(Phone)', @var['account_phone'])
     select_option(browser, :name, 'property(Account Type)', :text, @var['account_type'])
     select_option(browser, :name, 'property(Industry)', :text, @var['account_industry'])

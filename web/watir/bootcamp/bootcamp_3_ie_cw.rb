@@ -64,7 +64,7 @@ class Bootcamp3IeCw
   def delete_account(browser, acct_name)
     browser.link(:text, acct_name).click
     sleep(2)
-    browser.button(:name, 'Delete2').click
+    browser.button(:name, 'Delete2').click_no_wait
     close_alert(browser, "Message from webpage", "OK")
   end
 
@@ -79,4 +79,4 @@ class Bootcamp3IeCw
 
 end
 
-Bootcamp3Cw.new.run
+Bootcamp3IeCw.new.run
